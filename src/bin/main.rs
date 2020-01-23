@@ -17,6 +17,15 @@ fn construct_response_string(seed: &response_data, content: &str) -> String {
        HTTP-Version Status-Code Reason-Phrase CRLF
        headers CRLF
        message-body
+       
+       eg:
+          PUT /test1%2Epdf HTTP/1.1
+          Authorization: Basic xxxx
+          User-Agent: curl/7.20.0 (i386-pc-win32) libcurl/7.20.0 OpenSSL/0.9.8l zlib/1.2.3
+          Host: localhost
+          Accept: *//*
+          Content-Length: 24
+          Expect: 100-continue
    */
     format!(
         "{} {}\r\n\r\n{}",
